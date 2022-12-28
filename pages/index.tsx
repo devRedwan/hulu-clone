@@ -7,8 +7,7 @@ import requests from "../utils/requests";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home(prop) {
-  console.log(prop);
+export default function Home({ results }) {
   return (
     <>
       <Head>
@@ -17,10 +16,9 @@ export default function Home(prop) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/Redzulu-favicon.png" />
       </Head>
-
       <Header />
       <Nav />
-      <Results />
+      <Results results={results} />
     </>
   );
 }
@@ -28,20 +26,13 @@ export default function Home(prop) {
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
 
-  const url = `https://api.themoviedb.org/3${
-    requests[genre]?.url || requests.fetchTrending.url
-  }`;
-  console.log(url);
-
   const request = await fetch(
     `https://api.themoviedb.org/3${
       requests[genre]?.url || requests.fetchTrending.url
     }`
-  ).then((res) => res.json());
+  ).then((response) => response.json());
 
   return {
-    props: {
-      results: request.results,
-    },
+    props: { results: request.results },
   };
 }

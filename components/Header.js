@@ -7,6 +7,7 @@ import {
   UserIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { useState } from "react";
 import HeaderItem from "./HeaderItem";
 
 function Header() {
