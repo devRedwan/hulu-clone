@@ -5,7 +5,7 @@
 ## About Hulu
 Hulu-clone is a fully responsive user-friendly video streaming platform, mimicking Hulu.com. It enables users to effortlessly browse, stream movies/tv shows, etc. filtered into different categories ensuring a secure and personalized experiences.
 
-https://twitter-media-clone.vercel.app/
+https://hulu-clone-bmnibthge-devredwan.vercel.app/
 
 ## Features
 * Smooth Media browsing Experience
